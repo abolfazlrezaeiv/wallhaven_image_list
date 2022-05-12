@@ -5,4 +5,6 @@ class AppMessage {
   static const wallpaperPageDownloadWallpaperButtonTitle = 'Download Wallpaper';
   static const setWallpaperFailedSnackbarMessage =
       'couldn\'t change set the wallpaper';
+  static const downloadWallpaperFailedSnackbarMessage = 'download failed';
+  static const downloadWallpaperCompletedMessage = '100% Completed';
 }

@@ -10,4 +10,8 @@ abstract class ImageRepositoryInterface {
       ImageRequestModel imageRequestModel);
 
   Future<File> cacheImage(String imageUrl);
+
+  Future<String> getFilePath(uniqueFileName);
+
+  Future downloadFile(String imageUrl, void Function(int, int)? onReciveFunc);
 }

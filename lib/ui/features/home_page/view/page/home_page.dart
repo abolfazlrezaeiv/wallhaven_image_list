@@ -1,11 +1,9 @@
-import 'package:abolfazl_flutter_testtask/constants/message/app_messages.dart';
-import 'package:abolfazl_flutter_testtask/constants/padding/app_paddings.dart';
-import 'package:abolfazl_flutter_testtask/constants/size/app_size.dart';
-import 'package:abolfazl_flutter_testtask/domain/models/api_responses/image_response_model.dart';
-import 'package:abolfazl_flutter_testtask/ui/features/home_page/controller/home_controller.dart';
+import 'package:abolfazl_flutter_testtask/ui/features/home_page/view/components/home_image_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:abolfazl_flutter_testtask/domain/models/api_responses/image_response_model.dart';
+import 'package:abolfazl_flutter_testtask/ui/features/home_page/controller/home_controller.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
@@ -13,27 +11,14 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: PagedListView.separated(
         pagingController: controller.pagingController,
         builderDelegate: PagedChildBuilderDelegate<ImageResponseModel>(
-          itemBuilder: (context, image, index) => Padding(
-            padding: AppPadding.a20,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Image.network(
-                  image.url!,
-                  fit: BoxFit.cover,
-                  height: AppSize.s150,
-                  width: AppSize.s200,
-                ),
-                MaterialButton(
-                  color: Colors.amber,
-                  onPressed: () => controller.goToWallpaperDetail(image.url!),
-                  child: const Text(AppMessage.homePageDetailButtonTitle),
-                )
-              ],
-            ),
+          itemBuilder: (context, image, index) => HomeImageItem(
+            url: image.url!,
+            onNavigateButtonTapped: () =>
+                controller.goToWallpaperDetail(image.url!),
           ),
         ),
         separatorBuilder: (context, index) => const SizedBox(),
