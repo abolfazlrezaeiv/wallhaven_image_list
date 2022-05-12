@@ -16,20 +16,20 @@ class HomePage extends GetView<HomeController> {
       body: PagedListView.separated(
         pagingController: controller.pagingController,
         builderDelegate: PagedChildBuilderDelegate<ImageResponseModel>(
-          itemBuilder: (context, ads, index) => Padding(
+          itemBuilder: (context, image, index) => Padding(
             padding: AppPadding.a20,
             child: Stack(
               alignment: Alignment.center,
               children: [
                 Image.network(
-                  ads.url!,
+                  image.url!,
                   fit: BoxFit.cover,
                   height: AppSize.s150,
                   width: AppSize.s200,
                 ),
                 MaterialButton(
                   color: Colors.amber,
-                  onPressed: () => controller.goToWallpaperDetail(ads.url!),
+                  onPressed: () => controller.goToWallpaperDetail(image.url!),
                   child: const Text(AppMessage.homePageDetailButtonTitle),
                 )
               ],

@@ -12,9 +12,9 @@ class ImageApiCall extends GetConnect implements ImageApiCallInteface {
       ImageRequestModel imageRequestModel) async {
     final response = await get(
         AppUrls.wallhavenApiUrl + imageRequestModel.pageNumber.toString());
+    print(response.body);
     var total = response.body['meta']['total'];
     var data = response.body['data'];
-
     if (response.statusCode == 200) {
       data.forEach(
         (element) => imageList.add(
