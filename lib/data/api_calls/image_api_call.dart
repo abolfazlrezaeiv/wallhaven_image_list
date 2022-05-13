@@ -1,15 +1,16 @@
 import 'dart:io';
 import 'package:get/get_connect/connect.dart';
 import 'package:abolfazl_flutter_testtask/constants/url/api_endpoint_urls.dart';
-import 'package:abolfazl_flutter_testtask/domain/interfaces/api_calls/image_api_calls_interface.dart';
+import 'package:abolfazl_flutter_testtask/domain/interfaces/api_calls/api_call.dart';
 import 'package:abolfazl_flutter_testtask/domain/models/api_requests/image_request_model.dart';
 import 'package:abolfazl_flutter_testtask/domain/models/api_responses/image_response_model.dart';
 
-class ImageApiCall extends GetConnect implements ImageApiCallInteface {
+class ImageApiCall extends GetConnect
+    implements ApiCall<ImageResponseModel, ImageRequestModel> {
   @override
   List<ImageResponseModel> imageList = [];
   @override
-  Future<ImageListPage<ImageResponseModel>> getImageList(
+  Future<ListPage<ImageResponseModel>> getImageList(
       ImageRequestModel imageRequestModel) async {
     final response = await get(
         AppUrls.wallhavenApiUrl + imageRequestModel.pageNumber.toString());
@@ -21,9 +22,9 @@ class ImageApiCall extends GetConnect implements ImageApiCallInteface {
           ImageResponseModel.fromJson(element),
         ),
       );
-      return ImageListPage(itemList: imageList, grandTotalCount: total);
+      return ListPage(itemList: imageList, grandTotalCount: total);
     } else {
-      return ImageListPage(itemList: imageList, grandTotalCount: total);
+      return ListPage(itemList: imageList, grandTotalCount: total);
     }
   }
 }

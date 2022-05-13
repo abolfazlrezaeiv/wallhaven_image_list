@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'dart:io';
 
 import 'package:abolfazl_flutter_testtask/constants/route_name/route_name.dart';
-import 'package:abolfazl_flutter_testtask/data/api_calls/image_api_calls_implementation.dart';
+import 'package:abolfazl_flutter_testtask/data/api_calls/image_api_call.dart';
 import 'package:abolfazl_flutter_testtask/ui/routes/app_routes.dart';
 
 void main() {

@@ -8,8 +8,8 @@ class ImageResponseModel {
   }
 }
 
-class ImageListPage<ItemType> {
-  ImageListPage({
+class ListPage<ItemType> {
+  ListPage({
     required this.grandTotalCount,
     required this.itemList,
   });
