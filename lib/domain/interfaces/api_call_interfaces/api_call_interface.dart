@@ -1,7 +1,7 @@
-import 'package:abolfazl_flutter_testtask/domain/models/api_responses/image_response_model.dart';
+import 'package:abolfazl_flutter_testtask/domain/models/pagination/pagination.dart';
 
 abstract class ApiCall<ApiResponse, ApiRequest> {
-  List<ApiResponse> imageList = [];
+  List<ApiResponse> dataList = [];
 
-  Future<ListPage<ApiResponse>> getImageList(ApiRequest imageRequestModel);
+  Future<ListPage<ApiResponse>> getPginatedDataList(ApiRequest apiRequestModel);
 }
