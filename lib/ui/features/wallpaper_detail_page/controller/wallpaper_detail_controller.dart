@@ -1,7 +1,7 @@
+import 'package:abolfazl_flutter_testtask/domain/interfaces/repositories_interfaces/data_repository_interface.dart';
 import 'package:get/get.dart';
 import 'package:wallpaper_manager_flutter/wallpaper_manager_flutter.dart';
 import 'package:abolfazl_flutter_testtask/constants/message/app_messages.dart';
-import 'package:abolfazl_flutter_testtask/domain/interfaces/base_repositories/data_repository.dart';
 
 class WalpaperDetailController extends GetxController {
   WalpaperDetailController({required this.repository});

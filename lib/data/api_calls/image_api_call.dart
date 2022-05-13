@@ -1,7 +1,7 @@
 import 'dart:io';
+import 'package:abolfazl_flutter_testtask/domain/interfaces/api_call_interfaces/api_call_interface.dart';
 import 'package:get/get_connect/connect.dart';
 import 'package:abolfazl_flutter_testtask/constants/url/api_endpoint_urls.dart';
-import 'package:abolfazl_flutter_testtask/domain/interfaces/api_calls/api_call.dart';
 import 'package:abolfazl_flutter_testtask/domain/models/api_requests/image_request_model.dart';
 import 'package:abolfazl_flutter_testtask/domain/models/api_responses/image_response_model.dart';
 

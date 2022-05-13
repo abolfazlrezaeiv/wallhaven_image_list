@@ -1,8 +1,8 @@
+import 'package:abolfazl_flutter_testtask/domain/interfaces/repositories_interfaces/data_repository_interface.dart';
 import 'package:abolfazl_flutter_testtask/domain/models/api_responses/image_response_model.dart';
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:abolfazl_flutter_testtask/constants/route_name/route_name.dart';
-import 'package:abolfazl_flutter_testtask/domain/interfaces/base_repositories/data_repository.dart';
 import 'package:abolfazl_flutter_testtask/domain/models/api_requests/image_request_model.dart';
 
 class HomeController extends GetxController {
